@@ -12,6 +12,7 @@ if ( ! function_exists('create_guid'))
     function create_guid($namespace='')
     {
         static $guid = '';
+        $uid = uniqid($namespace, true);
         $allowed_keys = array(
             'REQUEST_TIME',
             'HTTP_USER_AGENT',
@@ -26,7 +27,6 @@ if ( ! function_exists('create_guid'))
                 null
                 )
             );
-        $uid = uniqid($namespace, true);
         $data = implode('', $request_data);
         $hash = strtoupper(hash('ripemd128', $uid . $guid . md5($data)));
         $guid = substr($hash,  0,  8).
