@@ -3,12 +3,12 @@
 if ( ! function_exists('create_guid'))
 {
     /**
-    * Create GUID function
-    * http://en.wikipedia.org/wiki/Globally_unique_identifier
-    * 00000000-0000-0000-0000-000000000000
-    *
-    * @return string guid
-    */
+     * Create GUID function
+     * http://en.wikipedia.org/wiki/Globally_unique_identifier
+     * 
+     * @param  string $namespace  for more enthropy
+     * @return string $guid       00000000-0000-0000-0000-000000000000
+     */
     function create_guid($namespace='')
     {
         static $guid = '';
